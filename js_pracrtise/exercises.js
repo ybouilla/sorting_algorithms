@@ -628,3 +628,115 @@ class EventEmitter {
         return res
     }
 }
+
+/**
+ * @param {number[]} nums
+ * @return {void}
+ */
+class ArrayWrapper  {
+    constructor(arr){
+        this.arr= arr
+        console.log(this.arr)
+    }
+};
+
+/**
+ * @return {number}
+ */
+ArrayWrapper.prototype.valueOf = function() {
+    let add_res = 0
+    console.log('tets', this.arr)
+        for (let i=0; i < this.arr.length; i++){
+            
+            add_res += Number(this.arr[i])
+        }
+        
+    return add_res
+}
+
+// 2695. Array Wrapper
+
+/**
+ * @return {string}
+ */
+ArrayWrapper.prototype.toString = function() {
+    let repr = "["
+
+    for (let i =0; i< this.arr.length; i++){
+        repr += this.arr[i].toString()
+        if (i < this.arr.length-1){
+            repr += ','
+        }
+        
+    }
+    repr += ']'
+    return repr
+}
+
+// Caclulator with method chaining
+
+class Calculator {
+    
+    /** 
+     * @param {number} value
+     */
+    constructor(value) {
+        this.value = value
+    }
+    
+    /** 
+     * @param {number} value
+     * @return {Calculator}
+     */
+    add(value){
+        this.value += value
+        return this
+    }
+    
+    /** 
+     * @param {number} value
+     * @return {Calculator}
+     */
+    subtract(value){
+        this.value= this.value - value
+        return this
+    }
+    
+    /** 
+     * @param {number} value
+     * @return {Calculator}
+     */  
+    multiply(value) {
+        this.value *= value
+        return this
+    }
+    
+    /** 
+     * @param {number} value
+     * @return {Calculator}
+     */
+    divide(value) {
+        if (value === 0)
+        {
+            throw "Division by zero is not allowed"
+        }
+        this.value /= value
+        return this
+    }
+    
+    /** 
+     * @param {number} value
+     * @return {Calculator}
+     */
+    power(value) {
+        this.value = this.value**value
+        return this
+    }
+    
+    /** 
+     * @return {number}
+     */
+    getResult() {
+        return this.value
+    }
+}

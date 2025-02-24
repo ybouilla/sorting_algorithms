@@ -21,15 +21,15 @@ export function BubbleSort(array)
     
 }
 
-/*
-Selection sort algorithm
-Finds the lowest element in the array after index `idx`
- and the end of the array 
-and swap it with array value
-at index `idx`
-Complexity O(n**2)
-
-@params {array} array
+/**
+* Selection sort algorithm
+* Finds the lowest element in the array after index `idx`
+*  and the end of the array 
+* and swap it with array value
+* at index `idx`
+* Complexity O(n**2)
+*
+* @ params{Array} array
 */
 
 export function SelectionSort(array){
